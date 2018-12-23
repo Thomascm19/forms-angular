@@ -1,0 +1,51 @@
+<div class="main">
+
+<h4>Formularios <small>template</small></h4>
+<hr>
+
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
+
+  <div>
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Nombre</label>
+        <div class="col-8">
+          
+          <input  type="text" 
+                  class="form-control"
+                  placeholder="Nombre"
+                  name="nombre"
+                  [(ngModel)]="usuario.nombre">
+        </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+
+        <input type="text"
+               class="form-control"
+               placeholder="Apellido"
+               name="apellido"
+               [(ngModel)]="usuario.apellido">
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Email</label>
+      <div class="col-8">
+
+        <input type="text"
+               class="form-control"
+               placeholder="Email"
+               name="email"
+               [(ngModel)]="usuario.email"
+               >
+      </div>
+    </div>
+    <button class="btn btn-dark">Enviar</button>
+
+  </div>
+
+</form>
+</div>
