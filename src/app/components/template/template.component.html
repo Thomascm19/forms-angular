@@ -14,7 +14,8 @@
                   class="form-control"
                   placeholder="Nombre"
                   name="nombre"
-                  [(ngModel)]="usuario.nombre">
+                  [(ngModel)]="usuario.nombre"
+                  required>
         </div>
     </div>
 
@@ -26,7 +27,8 @@
                class="form-control"
                placeholder="Apellido"
                name="apellido"
-               [(ngModel)]="usuario.apellido">
+               [(ngModel)]="usuario.apellido"
+               required>
 
       </div>
     </div>
@@ -40,7 +42,7 @@
                placeholder="Email"
                name="email"
                [(ngModel)]="usuario.email"
-               >
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
       </div>
     </div>
     <button class="btn btn-dark">Enviar</button>
