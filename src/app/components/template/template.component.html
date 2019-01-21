@@ -6,15 +6,16 @@
   <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
 
     <div>
-      <div class="form-group row">
+      <div class="form-group row" [ngClass]="{'is-invalid': nombre.errors?.minlength || nombre.errors?.required}">
         <label class="col-2 col-form-label">Nombre</label>
         <div class="col-8">
 
           <input type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="usuario.nombre"
             required minlength="5" #nombre="ngModel">
 
-          <small *ngIf="nombre.errors?.required" class="form-text text-muted">Este campo es requerido.</small>
-          <small *ngIf="nombre.errors?.minlength"  class="form-text text-muted">Este campo requiere por lo menos {{nombre.errors.minlength.requiredLength}} caracteres.</small>
+          <small *ngIf="nombre.errors?.required" class="form-text text-muted form-control-feedback">Este campo es requerido.</small>
+          <small *ngIf="nombre.errors?.minlength"  class="form-text text-muted form-control-feedback">Este campo requiere por lo menos 
+            {{nombre.errors.minlength.requiredLength}} caracteres.</small>
         </div>
       </div>
 
